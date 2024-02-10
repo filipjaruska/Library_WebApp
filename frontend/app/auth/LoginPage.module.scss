@@ -1,0 +1,72 @@
+$text-color: #333;
+$background-color: #f0f0f0;
+$primary-color: #9916e0;
+$border-color: #ddd;
+$error-color: red;
+$font-size-error: 14px;
+$border-radius: 8px;
+$shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$gap-size: 20px;
+$padding-form: 40px;
+$input-padding: 12px;
+$button-padding: 12px 24px;
+
+.loginContainer {
+  background-color: $background-color;
+  box-shadow: $shadow;
+  border-radius: $border-radius;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $gap-size;
+  padding: $padding-form;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+}
+
+.loginForm input {
+  width: calc(100% - 2 * $input-padding);
+  padding: $input-padding;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+  }
+}
+
+.loginForm button {
+  padding: $button-padding;
+  border: none;
+  border-radius: $border-radius;
+  background-color: $primary-color;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.errorMessage {
+  color: $error-color;
+  font-size: $font-size-error;
+  text-align: center;
+  margin-top: $gap-size;
+}
+
+@media (max-width: 400px) {
+  .loginForm {
+    padding: $padding-form 20px;
+  }
+}
